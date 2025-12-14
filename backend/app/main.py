@@ -1,12 +1,13 @@
 from fastapi import FastAPI
+from sqlalchemy import text
 
-app = FastAPI(
-    title="Industrial Monitoring API",
-    version="0.1.0",
-    description="Backend service for an industrial monitoring platform"
-)
+from app.db.session import engine
+
+app = FastAPI(title="Industrial Monitoring API")
 
 
 @app.get("/health", tags=["health"])
 def health_check():
+    with engine.connect() as connection:
+        connection.execute(text("SELECT 1"))
     return {"status": "ok"}
