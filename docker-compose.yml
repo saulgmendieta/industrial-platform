@@ -10,6 +10,8 @@ services:
       - .env
     depends_on:
       - db
+    environment:
+      DATABASE_URL: postgresql+psycopg2://industrial:industrial@db:5432/industrial_db
 
   db:
     image: postgres:15

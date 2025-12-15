@@ -9,5 +9,11 @@ dependencies = [
     "uvicorn[standard]",
     "sqlalchemy>=2.0",
     "psycopg2-binary",
-    "pydantic-settings"
+    "pydantic-settings",
+    "alembic"
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+exclude = ["alembic*"]

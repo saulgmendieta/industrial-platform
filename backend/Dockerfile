@@ -18,7 +18,8 @@ COPY pyproject.toml .
 
 # 6. Install Python dependencies
 RUN pip install --upgrade pip \
-    && pip install .
+    && pip install . \
+    && pip install alembic
 
 # 7. Code copy
 COPY app ./app

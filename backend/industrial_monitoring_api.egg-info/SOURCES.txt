@@ -13,6 +13,7 @@ app/core/logging.py
 app/db/base.py
 app/db/init-db.py
 app/db/session.py
+app/models/__init__.py
 app/models/alarm.py
 app/models/device.py
 app/models/measurement.py
