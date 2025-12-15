@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from sqlalchemy import text
+from app.db import base 
 
 from app.db.session import engine
 
