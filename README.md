@@ -13,11 +13,23 @@ This project focuses on:
 The project is intentionally developed in incremental stages to reflect
 real-world system design practices.
 
+Backend service built with FastAPI, designed with clean architecture,
+environment-based configuration, and container-ready logging.
+
 ## Tech Stack
 - Python 3.11
 - FastAPI
-- Docker
-- PostgreSQL (planned)
+- PostgreSQL
+- SQLAlchemy
+- Docker / Docker Compose
+
+
+## Architecture
+app/
+├── api/        # HTTP layer
+├── services/   # Business logic
+├── db/         # Persistence
+└── core/       # Config & logging
 
 ## Local Development
 
