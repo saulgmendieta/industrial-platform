@@ -1,1 +1,3 @@
 backend/steps.log
+backend/commands.log
+backend/.env.local

@@ -6,7 +6,8 @@ class Settings(BaseSettings):
     APP_NAME: str = "Industrial Backend"
     LOG_LEVEL: str = "INFO"
     DATABASE_URL: str
-
+    DEVICE_OFFLINE_TIMEOUT_SECONDS: int = 30
+    
     class Config:
         env_file = ".env"
 

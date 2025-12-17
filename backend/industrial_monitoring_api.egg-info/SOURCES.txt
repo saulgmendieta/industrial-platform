@@ -1,6 +1,7 @@
 README.md
 pyproject.toml
 app/main.py
+app/api/routes/devices.py
 app/api/v1/router.py
 app/api/v1/endpoints/alarms.py
 app/api/v1/endpoints/auth.py
@@ -13,6 +14,8 @@ app/core/logging.py
 app/db/base.py
 app/db/init-db.py
 app/db/session.py
+app/domain/__init__.py
+app/domain/device.py
 app/models/__init__.py
 app/models/alarm.py
 app/models/device.py
@@ -24,9 +27,11 @@ app/schemas/device.py
 app/schemas/measurement.py
 app/schemas/sensor.py
 app/schemas/user.py
+app/services/__init__.py
 app/services/alarm-service.py
 app/services/auth-service.py
 app/services/device-service.py
+app/services/device_registry.py
 app/services/ingestion-service.py
 app/utils/time.py
 app/utils/validators.py

@@ -37,3 +37,18 @@ The project uses Docker Compose for local orchestration.
 
 ```bash
 docker-compose up --build
+
+## Device Runtime State
+
+The backend maintains an in-memory runtime registry of connected devices.
+Each device tracks:
+
+- `device_id`
+- `status` (online / offline)
+- `last_seen` timestamp
+
+### Heartbeat
+Devices are marked online when a heartbeat is received:
+
+```http
+POST /devices/{device_id}/heartbeat
