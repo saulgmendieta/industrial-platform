@@ -10,8 +10,12 @@ services:
       - .env
     depends_on:
       - db
+    restart: unless-stopped
+    networks:
+      - internal
     environment:
-      DATABASE_URL: postgresql+psycopg2://industrial:industrial@db:5432/industrial_db
+      DATABASE_URL: ${DATABASE_URL}
+      
 
   db:
     image: postgres:15
@@ -22,8 +26,13 @@ services:
       POSTGRES_DB: industrial_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - internal
 
 volumes:
   postgres_data:
+
+networks:
+  internal:
+    driver: bridge

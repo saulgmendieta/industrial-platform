@@ -38,6 +38,7 @@ The project uses Docker Compose for local orchestration.
 ```bash
 docker-compose up --build
 
+```
 ## Device Runtime State
 
 The backend maintains an in-memory runtime registry of connected devices.
@@ -52,3 +53,15 @@ Devices are marked online when a heartbeat is received:
 
 ```http
 POST /devices/{device_id}/heartbeat
+```
+## Architecture (Week 2)
+
+Client
+  |
+FastAPI Backend (Docker)
+  |
+PostgreSQL (internal container network)
+
+- Database is internal-only
+- Backend exposes health and API endpoints
+- Runtime device lifecycle handled asynchronously
